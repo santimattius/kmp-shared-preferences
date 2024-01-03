@@ -3,12 +3,12 @@ agp = "8.2.0"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
-androidx-activityCompose = "1.8.1"
+androidx-activityCompose = "1.8.2"
 androidx-appcompat = "1.6.1"
 androidx-constraintlayout = "2.1.4"
 androidx-core-ktx = "1.12.0"
 androidx-espresso-core = "3.5.1"
-androidx-material = "1.10.0"
+androidx-material = "1.11.0"
 androidx-test-junit = "1.1.5"
 compose = "1.5.4"
 compose-compiler = "1.5.5"
@@ -16,6 +16,8 @@ compose-plugin = "1.5.11"
 junit = "4.13.2"
 kotlin = "1.9.21"
 
+multiplatformSettings = "1.1.1"
+preferenceKtx = "1.2.1"
 voyager = "1.0.0-rc10"
 coil-compose = "2.5.0"
 image-loader = "1.6.4"
@@ -24,9 +26,10 @@ koin = "3.5.0"
 koinCompose = "1.1.0"
 
 kotlinxCoroutinesAndroid = "1.7.3"
-ktorVersion = "2.3.5"
+ktorVersion = "2.3.7"
 
 [libraries]
+androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "preferenceKtx" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -43,6 +46,8 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
 
+multiplatform-settings = { module = "com.russhwolf:multiplatform-settings", version.ref = "multiplatformSettings" }
+multiplatform-settings-coroutines = { module = "com.russhwolf:multiplatform-settings-coroutines", version.ref = "multiplatformSettings" }
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
 voyager-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voyager" }
 
