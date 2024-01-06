@@ -1,5 +1,7 @@
 # KMP SharedPreferences Example
 
+Example using [Multiplaform Settings](https://github.com/russhwolf/multiplatform-settings/tree/main)
+
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
