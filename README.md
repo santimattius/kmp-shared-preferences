@@ -2,6 +2,12 @@
 
 Example using [Multiplaform Settings](https://github.com/russhwolf/multiplatform-settings/tree/main)
 
+
+
+https://github.com/santimattius/kmp-shared-preferences/assets/22333101/d17f41b3-5702-4483-bb82-f8ca7872ea99
+
+
+
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
