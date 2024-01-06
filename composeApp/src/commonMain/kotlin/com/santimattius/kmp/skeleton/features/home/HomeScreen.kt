@@ -39,7 +39,7 @@ fun HomeScreenContent(
 ) {
     val state by screenModel.uiState.collectAsState()
     Scaffold(
-        topBar = { AppBar(title = "Compose Skeleton") },
+        topBar = { AppBar(title = "Shared Preferences") },
     ) {
         Box(
             modifier = Modifier.fillMaxSize().padding(it),
