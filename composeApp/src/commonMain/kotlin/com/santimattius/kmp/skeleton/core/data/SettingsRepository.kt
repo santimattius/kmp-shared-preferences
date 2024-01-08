@@ -1,28 +1,32 @@
 package com.santimattius.kmp.skeleton.core.data
 
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
 import com.russhwolf.settings.Settings
-import com.santimattius.kmp.skeleton.core.preferences.IntSettingConfig
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 class SettingsRepository(
-    settings: Settings,
+    private val dataStore: DataStore<Preferences>,
 ) {
 
 
-    private val _counter = IntSettingConfig(settings, "counter", 0)
-    val counter: Flow<Int> = _counter.value
+    private val _counterKey = intPreferencesKey("counter")
+    val counter: Flow<Int> = dataStore.data.map { it[_counterKey]?.toInt() ?: 0 }
 
-    fun increment() {
-        val value = _counter.get().toInt() + 1
-        _counter.set("$value")
+    suspend fun increment() {
+        dataStore.edit {
+            val value = it[_counterKey] ?: 0
+            it[_counterKey] = value + 1
+        }
     }
 
-    fun decrease() {
-        val value = _counter.get().toInt() - 1
-        if (value < 0) {
-            _counter.set("0")
-        } else {
-            _counter.set("$value")
+    suspend fun decrease() {
+        dataStore.edit {
+            val value = (it[_counterKey] ?: 0) - 1
+            it[_counterKey] = if (value < 0) 0 else value
         }
     }
 }

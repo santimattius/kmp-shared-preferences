@@ -6,6 +6,7 @@ import com.santimattius.kmp.skeleton.core.data.SettingsRepository
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 
 data class HomeUiState(
@@ -24,8 +25,16 @@ class HomeScreenModel(
         initialValue = HomeUiState(),
     )
 
-    fun desc() = settingsRepository.decrease()
+    fun desc() {
+        screenModelScope.launch {
+            settingsRepository.decrease()
+        }
+    }
 
 
-    fun inc() = settingsRepository.increment()
+    fun inc() {
+        screenModelScope.launch {
+            settingsRepository.increment()
+        }
+    }
 }

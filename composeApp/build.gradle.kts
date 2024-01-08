@@ -68,8 +68,8 @@ kotlin {
                 api(libs.koin.core)
                 api(libs.koin.compose)
 
-                implementation(libs.multiplatform.settings)
-                implementation(libs.multiplatform.settings.coroutines)
+                api(libs.androidx.datastore.preferences.core)
+                api(libs.androidx.datastore.core.okio)
 
             }
         }
