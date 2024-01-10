@@ -17,6 +17,8 @@ junit = "4.13.2"
 kotlin = "1.9.21"
 
 multiplatformSettings = "1.1.1"
+dataStoreVersion = "1.1.0-alpha07"
+
 preferenceKtx = "1.2.1"
 voyager = "1.0.0-rc10"
 coil-compose = "2.5.0"
@@ -48,6 +50,10 @@ compose-material = { module = "androidx.compose.material:material", version.ref 
 
 multiplatform-settings = { module = "com.russhwolf:multiplatform-settings", version.ref = "multiplatformSettings" }
 multiplatform-settings-coroutines = { module = "com.russhwolf:multiplatform-settings-coroutines", version.ref = "multiplatformSettings" }
+
+androidx-datastore-core-okio = { group = "androidx.datastore", name = "datastore-core-okio", version.ref = "dataStoreVersion" }
+androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "dataStoreVersion" }
+
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
 voyager-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voyager" }
 

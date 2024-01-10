@@ -1,15 +1,15 @@
 import androidx.compose.ui.window.ComposeUIViewController
-import com.russhwolf.settings.NSUserDefaultsSettings
-import com.russhwolf.settings.Settings
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import com.santimattius.kmp.skeleton.core.ui.components.createDataStore
 import org.koin.dsl.module
-import platform.Foundation.NSUserDefaults
 
 fun MainViewController() = ComposeUIViewController { App(iosPlatformModules) }
 
 
 val iosModule = module {
-    single<Settings> {
-        NSUserDefaultsSettings(NSUserDefaults.standardUserDefaults)
+    single<DataStore<Preferences>> {
+        createDataStore()
     }
 }
 
